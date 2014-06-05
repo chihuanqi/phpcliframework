@@ -14,7 +14,7 @@ return array(
 		 */
 			'Writer' => array(
 					'className' => 'ProcOne', 
-					'initParam' => array(1 ), 
+					'initParam' => array(1), 
 					'daemon'    => 1, 
 					'multi'     => 2,
 					'maxLoop'   => 10,
@@ -24,18 +24,6 @@ return array(
 					'initParam' => array(1 ), 
 					'daemon'=>1, 
 					'multi'=>4
-			),
-			'Baiduer' => array(
-					'className' => 'Baidu', 
-					'initParam' => array(), 
-					'daemon'    =>1, 
-					'multi'     =>2
-			),
-			'Sogouer' => array(
-					'className' => 'Sougou', 
-					'initParam' => array(), 
-					'daemon'    => 1, 
-					'multi'     => 2
 			),
 	),
 );
