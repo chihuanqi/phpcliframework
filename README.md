@@ -18,9 +18,6 @@
 
 	1) config中加入 配置 ,
 	
-	
-	
-	
         /*  
          * 'proc name' => array(
          *  'className' => 'className',
@@ -32,7 +29,8 @@
          
          
          
-    2) 编写 子进程类, 需要继承 ProcBasic基类, 进程类中的__counstruct()需要接受配置中initParam的配置信息,  run()函数为默认入口函数, 需要 public。
+	2) 编写 子进程类, 需要继承 ProcBasic基类, 进程类中的__counstruct()需要接受配置中initParam的配置信息,  run()函数为默认入口函数, 需要 public。
+	
 ##后续开发中的功能
 
 
