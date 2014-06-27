@@ -1,14 +1,14 @@
-最近新加功能
-1. 文件迭代器功能，逐行读文件可以使用组件fileOpener 
-        /*
-	* foreach($this->getCmt('fileOp')->open(LOG."/2014-06-25.error.log") as $line_num => $line)
-	* {
-	* 	echo $line_num."=>".trim($line); echo "\n";	
-	* }
-	*/
-	之前fopen  while 之类的打开方式缩减为一句话
+##最近新加功能
+1. 文件迭代器功能，逐行读文件可以使用组件fileOpener，之前fopen  while 之类的打开方式缩减为一句话
+
+        /*  
+         * foreach($this->getCmt('fileOp')->open(LOG."/2014-06-25.error.log") as $line_num => $line) {
+         * 	echo $line_num."=>".trim($line); echo "\n";
+         * }	
+         */
 
 2. 添加pdo组件在config中配置相应的
+
      /*
       * 'component' => array(
       *    'mysqlrd' => array(
