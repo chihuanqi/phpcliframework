@@ -1,0 +1,9 @@
+2014-06-25 10:03:58unkown[16668] error info :[8]Undefined index:  component in /home/users/suqian/framework/processFrameWork/lib/MainProc.php at line 25
+2014-06-25 10:04:07unkown[14257] error info :[8]Undefined index:  component in /home/users/suqian/framework/processFrameWork/lib/MainProc.php at line 25
+2014-06-25 10:15:37unkown[14071] error info :[8]Use of undefined constant APPLIB - assumed 'APPLIB' in /home/users/suqian/framework/processFrameWork/config/common.php at line 18
+2014-06-25 10:15:37unkown[14071] error info :[8]Use of undefined constant APPLIB - assumed 'APPLIB' in /home/users/suqian/framework/processFrameWork/config/common.php at line 18
+2014-06-25 10:15:55unkown[8198] error info :[8]Use of undefined constant APPLIB - assumed 'APPLIB' in /home/users/suqian/framework/processFrameWork/config/common.php at line 18
+2014-06-25 10:15:55unkown[8198] error info :[8]Use of undefined constant APPLIB - assumed 'APPLIB' in /home/users/suqian/framework/processFrameWork/config/common.php at line 18
+2014-06-25 10:53:56unkown[26348] error info :[2]unlink(/home/users/suqian/framework/processFrameWork/var/pid.lock): No such file or directory in /home/users/suqian/framework/processFrameWork/core/MainProc.php at line 191
+2014-06-25 10:55:26unkown[32404] error info :[2]unlink(/home/users/suqian/framework/processFrameWork/var/pid.lock): No such file or directory in /home/users/suqian/framework/processFrameWork/core/MainProc.php at line 191
+2014-06-25 10:55:59unkown[20815] error info :[2]unlink(/home/users/suqian/framework/processFrameWork/var/pid.lock): No such file or directory in /home/users/suqian/framework/processFrameWork/core/MainProc.php at line 191
