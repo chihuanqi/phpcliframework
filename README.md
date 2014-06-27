@@ -9,20 +9,20 @@
 
 2. 添加pdo组件在config中配置相应的
 
-     /*
-      * 'component' => array(
-      *    'mysqlrd' => array(
-      *        	'className' => 'pdo',
-      *        'initParam'=> array(
-      *            'dsn'    => 'mysql:dbname=Vs_Health_Word;host=127.0.0.1;port=3307',
-      *            'user'   => 'root',
-      *            'passwd' => 'Search@bd',
-      *        )
-      *    )
-      * )
-      */
-      即刻使用$this->getCmt('mysqlrd')->query来操作对应的数据库。
-
+     	/*
+      	 * 'component' => array(
+      	 *    'mysqlrd' => array(
+      	 *        	'className' => 'pdo',
+      	 *        'initParam'=> array(
+      	 *            'dsn'    => 'mysql:dbname=Vs_Health_Word;host=127.0.0.1;port=3307',
+      	 *            'user'   => 'root',
+      	 *            'passwd' => 'Search@bd',
+      	 *        )
+      	 *    )
+      	 * )
+      	 * -----------------------使用方式-----------------------------
+      	 * $this->getCmt('mysqlrd')->query
+      	 */
 ##第一版简要功能点
 
 
