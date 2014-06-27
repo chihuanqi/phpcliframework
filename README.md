@@ -1,4 +1,4 @@
-##最近新加功能
+##20140627更新功能点
 1. 文件迭代器功能，逐行读文件可以使用组件fileOpener，之前fopen  while 之类的打开方式缩减为一句话
 
           foreach($this->getCmt('fileOp')->open(LOG."/2014-06-25.error.log") as $line_num => $line) {
@@ -21,7 +21,7 @@
       	  )
       	  -----------------------使用方式-----------------------------
       	  $this->getCmt('mysqlrd')->query($sql);
-      	 /
+      	  
 ##第一版简要功能点
 
 
