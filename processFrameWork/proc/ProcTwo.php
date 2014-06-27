@@ -7,12 +7,12 @@ class ProcTwo extends ProcBasic
 
 	public function __construct($count)
 	{
-		$this->count    = $count;
+		$this->count = $count;
 	}
 	public function run()
 	{
-		$this->count++;
-		$this->log($this->count);
+		echo $this->count++;
+		$this->log($this->count."aaaaaaaaaaaaaaaaaaaawhyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
 	}
 
 }
