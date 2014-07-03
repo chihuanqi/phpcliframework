@@ -102,7 +102,7 @@ class ProcBasic
         }
 
 		if (isset($this->components[$property_name])) {
-            $this->cmp[$property_name] = $this->objectFactory($this->components[$property_name]['componentName'], $this->components[$property_name]['initParam']);
+            $this->cmp[$property_name] = $this->objectFactory($this->components[$property_name]['className'], $this->components[$property_name]['initParam']);
 			return $this->cmp[$property_name];
         }
 

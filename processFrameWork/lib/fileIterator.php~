@@ -14,20 +14,6 @@
  * @brief 
  *  
  **/
-class fileOpener
-{
-	public function open($filelocation)
-	{
-		if(is_dir($filelocation)) {
-			return new DirIterator($filelocation);	
-		}
-		if (is_file($filelocation)) {
-			return new FileIterator($filelocation);
-		}
-		return false;
-	}
-}
-
 class fileIterator implements Iterator
 {
     private  $fp;
@@ -38,7 +24,7 @@ class fileIterator implements Iterator
     {
 		$fp = @fopen($filename, 'r');
         if (!$fp) {
-            throw new Exception("file ".$filename." is not exists");
+            throw new Exception("file ".$filename." is not exists"); 
         }
 		$this->fp = $fp;
     }
@@ -65,10 +51,17 @@ class fileIterator implements Iterator
     public function valid()
 	{
 		$this->line = fgets($this->fp);
-		if ($this->line !==false) {
-			$this->line_num++;
-			return true;
-		}
-		return false;
+		$this->line_num++;
+        return $this->line != false;
     }
+
 }
+
+$fileIt = new fileIterator('./tessdft.txt');
+
+foreach($fileIt as $k => $line) {
+		echo $k."->".$line;
+}
+
+exit;
+

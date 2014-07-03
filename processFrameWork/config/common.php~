@@ -43,7 +43,6 @@ function errorlog($errno, $errstr, $errfile, $errline)
 		$log = date("Y-m-d H:i:s", time()).'unkown['.$pid.'] error info :'.$error_str."\n";
 		$logLocation = LOG.DIRECTORY_SEPARATOR.date("Y-m-d", time()).".error.log";
 		file_put_contents($logLocation, $log, FILE_APPEND);
-		echo $log."\n";
 }
 
 set_error_handler("errorlog");

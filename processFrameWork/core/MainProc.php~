@@ -123,6 +123,8 @@ class MainProc extends ProcBasic
 				}
 				$this->process[$procname] = $this->processAll[$procname];
 			}
+			$this->daemon = true;
+			$this->complicating = true;
 		} else if (strpos($this->startProcs, '-')!==false) {
 			$procs = explode("-", $this->startProcs);
 			foreach($procs as $procname) {
@@ -132,6 +134,7 @@ class MainProc extends ProcBasic
 				}
 				$this->process[$procname] = $this->processAll[$procname];
 			}
+			$this->complicating = false;
 		} else {
 			$procname = $this->startProcs;
 			if (!isset($this->processAll[$procname])) {
@@ -139,6 +142,7 @@ class MainProc extends ProcBasic
 				exit;
 			}
 			$this->process[$procname] = $this->processAll[$procname];
+			$this->complicating = false;
 		}
 	}
 		
@@ -206,8 +210,12 @@ class MainProc extends ProcBasic
 			}
 			$daemon = false;
 			if(isset($procArr['daemon'])) $daemon = $procArr['daemon'];
-			for($i=1;$i<=$multi;$i++) 
-				$this->forkChildren($procArr['className'], $procArr['initParam'], $procName, $i, $daemon, $maxLoop);
+			if ($this->complicating)
+				for($i=1;$i<=$multi;$i++) 
+					$this->forkChildren($procArr['className'], $procArr['initParam'], $procName, $i, $daemon, $maxLoop);
+			else 
+				for($i=1;$i<=$multi;$i++)
+					$this->execChildren($procArr['className'], $procArr['initParam'], $procName, $i, $daemon, $maxLoop);
 		}
 
 		$this->freshProcessInfo();
@@ -243,6 +251,23 @@ class MainProc extends ProcBasic
 		$this->log('Master proc exited');
 	}
 	
+	private function execChildren($className, $initParam, $procName='unkown', $multi=1, $daemon=0, $maxLoop=0)
+	{
+		$worker = $this->objectFactory($className, $initParam);
+		$c_pid = posix_getpid();
+		$worker->setProcName($procName);
+		$worker->setPid($c_pid);
+		$worker->setMulti($multi);
+		$worker->setMaxLoop($maxLoop);
+		$worker->setComponent($this->component);
+		if ($daemon) {
+			$worker->loopRun();
+		} else {
+			$worker->singleRun();
+		}
+		exit(0);  // neccessary to  exit  , or will go back to run() funtion, makes trouble;
+	}
+
 	private function forkChildren($className, $initParam, $procName='unkown', $multi=1, $daemon=0, $maxLoop=0)
 	{
 		if (!class_exists($className)) {

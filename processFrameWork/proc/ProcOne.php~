@@ -14,7 +14,7 @@ class ProcOne extends ProcBasic
 	public function run()
 	{
 			var_dump($this->getCmt('mysqlrd')->query('select 1 from Plan'));
-			foreach($this->getCmt('fileOp')->open(LOG."/2014-07-03.error.log") as $line_num => $line)
+			foreach($this->getCmt('fileOp')->open(LOG."/2014-06-25.error.log") as $line_num => $line)
 			{
 				echo $line_num."=>".trim($line); echo "\n";
 			}
