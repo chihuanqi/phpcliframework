@@ -5,7 +5,7 @@
           启动 php server.php start One+Two
           停止 php server.php stop One+Two 
  
-2. 如果config中设置 'daemon' => true,  则会设置标准输出到'stdoutFile' => './std.out'  放置终端关闭以后，PHP 打印数据到终端（已关闭）自动退出的情况
+2. 自身实现 nohup 功能, 如果config中设置 'daemon' => true,  则会设置标准输出到'stdoutFile' => './std.out'  放置终端关闭以后，PHP 打印数据到终端（已关闭）自动退出的情况
 
 
 3. 文件迭代器添加awkopen方法，可以像awk一样迭代文件
