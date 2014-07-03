@@ -1,3 +1,23 @@
+##20140703更新功能点
+1. 启动进程可以使用 a  or  a+b  来进行单独 或者 并发执行
+
+          比如
+          启动 php server.php start One+Two
+          停止 php server.php stop One+Two 
+ 
+2. 如果config中设置 'daemon' => true,  则会设置标准输出到'stdoutFile' => './std.out'  放置终端关闭以后，PHP 打印数据到终端（已关闭）自动退出的情况
+
+
+3. 文件迭代器添加awkopen方法，可以像awk一样迭代文件
+
+          比如
+          foreach($this->getCmt('fileOp')->awkopen(INPUT."/vsmed_click_log.parsed.20140626") as $line_arr) {
+                $line = $line_arr[0];
+                $a    = trim($line_arr[10]);
+                $b    = trim($line_arr[2]);
+                $c    = trim($line_arr[12]);
+	  }
+
 ##20140627更新功能点
 1. 文件迭代器功能，逐行读文件可以使用组件fileOpener，之前fopen  while 之类的打开方式缩减为一句话
 
