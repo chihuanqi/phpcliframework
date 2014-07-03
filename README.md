@@ -16,7 +16,7 @@
                 $a    = trim($line_arr[10]);
                 $b    = trim($line_arr[2]);
                 $c    = trim($line_arr[12]);
-	  }
+          }
 
 ##20140627更新功能点
 1. 文件迭代器功能，逐行读文件可以使用组件fileOpener，之前fopen  while 之类的打开方式缩减为一句话
