@@ -45,7 +45,7 @@ class fileIterator implements Iterator
 
     public function __construct($filename) 
     {
-		@$fp = fopen($filename, 'r');
+		$fp = fopen($filename, 'r');
         if (!$fp) {
             throw new Exception("file ".$filename." is not exists");
         }
