@@ -11,15 +11,13 @@
           
          'procname' => array(
           'className' => 'className',
-          'initParam' => array(),  #  __construct param display as an array
-          'daemon' => true/false,  
+          'initParam' => array(), //  __construct param display as an array
+          'daemon' => true/false, 
           //if set true, your proc run() function will loop without ended, 
           //if set false, your proc will exited when run() function run ended; 
-          'multi'   => int(num),    
-          // the number of your proc, please not set too big , memory will run out. 
-          'maxLoop' => int(num)    
-          // max loop the proc running
-         
+          'multi'   => int(num), // the number copy of your proc . 
+          'maxLoop' => int(num)  //max loop the proc running
+         )
 	2) 编写 子进程类, 需要继承 ProcBasic基类, 进程类中的__counstruct()需要接受配置中initParam的配置信息,  run()函数为默认入口函数, 需要 public。
 	
 ##后续开发中的功能
