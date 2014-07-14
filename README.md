@@ -29,11 +29,11 @@
           
              'procname' => array(
                 'className' => 'className',
-          	'initParam' => array(), //  __construct param display as an array
-          	'daemon' => true/false, 
-          	//if set true, your proc run() function will loop without ended, 
-          	//if set false, your proc will exited when run() function run ended; 
-          	'multi'   => int(num), // the number copy of your proc . 
+                'initParam' => array(), //  __construct param display as an array
+                'daemon' => true/false, 
+                //if set true, your proc run() function will loop without ended, 
+                //if set false, your proc will exited when run() function run ended; 
+                'multi'   => int(num), // the number copy of your proc . 
                 'maxLoop' => int(num)  //max loop the proc running
              )
          
