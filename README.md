@@ -9,7 +9,7 @@
 	
 2. 关闭 
 
-          php server.php start procname
+          php server.php stop  procname
           php server.php stop  procname1+proname2
           php server.php stop  procname1-proname2
 
