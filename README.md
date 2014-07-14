@@ -2,9 +2,11 @@
 
 
 1. 启动 
+
 	并发执行  php server.php start procname1+proname2
 	顺序执行  php server.php start procname1-proname2
 2. 关闭 
+
  	php server.php stop  procname1+proname2
 	php server.php stop  procname1-proname2
 
@@ -12,20 +14,22 @@
 
 4. 配置进程
 
-        1) config中加入 配置 ,
-	
+	1) 编写 子进程类, 需要继承 ProcBasic基类, 进程类中的__counstruct()需要接受配置中initParam的配置信息,  run()函数为默认入口函数, 需要 public, 放入Proc 目录中进行执行。
+
+
+        2) config中加入 配置 ,
           
          'procname' => array(
-          'className' => 'className',
-          'initParam' => array(), //  __construct param display as an array
-          'daemon' => true/false, 
-          //if set true, your proc run() function will loop without ended, 
-          //if set false, your proc will exited when run() function run ended; 
-          'multi'   => int(num), // the number copy of your proc . 
-          'maxLoop' => int(num)  //max loop the proc running
+          	'className' => 'className',
+          	'initParam' => array(), //  __construct param display as an array
+          	'daemon' => true/false, 
+          	//if set true, your proc run() function will loop without ended, 
+          	//if set false, your proc will exited when run() function run ended; 
+          	'multi'   => int(num), // the number copy of your proc . 
+          	'maxLoop' => int(num)  //max loop the proc running
          )
          
-	2) 编写 子进程类, 需要继承 ProcBasic基类, 进程类中的__counstruct()需要接受配置中initParam的配置信息,  run()函数为默认入口函数, 需要 public。
+	
 	
 ##20140703更新功能点
 1. 启动进程可以用 php server.php start One-Two  顺序执行
