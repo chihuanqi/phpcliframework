@@ -2,35 +2,52 @@
 
 
 1. 启动 
-	并发执行  php server.php start procname1+proname2
-	顺序执行  php server.php start procname1-proname2
-2. 关闭 
- 	php server.php stop  procname1+proname2
-	php server.php stop  procname1-proname2
 
-3. 查看所有进程组状态 php server.php ps
+          单独执行  php server.php start procname
+          并发执行  php server.php start procname1+proname2
+          顺序执行  php server.php start procname1-proname2
+	
+2. 关闭 
+
+          php server.php stop  procname
+          php server.php stop  procname1+proname2
+          php server.php stop  procname1-proname2
+
+3. 查看所有进程组状态
+
+          php server.php ps
 
 4. 配置进程
 
-        1) config中加入 配置 ,
-	
+          1) 编写 子进程类, 需要继承 ProcBasic基类, 
+             进程类中的__counstruct()需要接受配置中initParam的配置信息, 没有initParam可以忽略,  
+             run()函数为默认入口函数, 需要 public, 
+             把该进程类放入Proc 目录中进行执行。
+
+
+          2) 如果不按照默认的配置执行，那么需要在config中加入 配置 ,
           
-         'procname' => array(
-          'className' => 'className',
-          'initParam' => array(), //  __construct param display as an array
-          'daemon' => true/false, 
-          //if set true, your proc run() function will loop without ended, 
-          //if set false, your proc will exited when run() function run ended; 
-          'multi'   => int(num), // the number copy of your proc . 
-          'maxLoop' => int(num)  //max loop the proc running
-         )
+             'procname' => array(
+                'className' => 'className',
+                'initParam' => array(), //  __construct param display as an array
+                'daemon' => true/false, 
+                //if set true, your proc run() function will loop without ended, 
+                //if set false, your proc will exited when run() function run ended; 
+                'multi'   => int(num), // the number copy of your proc . 
+                'maxLoop' => int(num)  //max loop the proc running
+             )
          
-	2) 编写 子进程类, 需要继承 ProcBasic基类, 进程类中的__counstruct()需要接受配置中initParam的配置信息,  run()函数为默认入口函数, 需要 public。
 	
-##20140703更新功能点
-1. 启动进程可以用 php server.php start One-Two  顺序执行
+	
+##20140714更新功能点
+1. 启动进程可以用 
+
+           php server.php start One-Two  顺序执行
+
 
 2. 进程可以不再作配置, 直接在Proc文件夹中定义 任务名称= 文件名称（任务名称.php）= 类名, 则默认以单实例,非常驻内存模式启动  非默认配置则仍需要在config.php中 进行配置.
+
+3. 非daemon 进程 stop 时 直接退出
 
 
 ##20140703更新功能点
