@@ -1,9 +1,15 @@
 ##使用方法
 
 
-1. 启动 php server.php start procname1+proname2
-2. 关闭 php server.php stop  procname1+proname2
+1. 启动 
+	并发执行  php server.php start procname1+proname2
+	顺序执行  php server.php start procname1-proname2
+2. 关闭 
+ 	php server.php stop  procname1+proname2
+	php server.php stop  procname1-proname2
+
 3. 查看所有进程组状态 php server.php ps
+
 4. 配置进程
 
         1) config中加入 配置 ,
@@ -18,16 +24,14 @@
           'multi'   => int(num), // the number copy of your proc . 
           'maxLoop' => int(num)  //max loop the proc running
          )
+         
 	2) 编写 子进程类, 需要继承 ProcBasic基类, 进程类中的__counstruct()需要接受配置中initParam的配置信息,  run()函数为默认入口函数, 需要 public。
 	
-##后续开发中的功能
+##20140703更新功能点
+1. 启动进程可以用 php server.php start One-Two  顺序执行
 
-1. 基于这个框架写一个httpserver, 可以使用 主进程listen -> PHP消息队列 -> 子进程抢队列    模式
-2. 进程组启动目前已经分离，但是错误日志还没有分开（普通日志、标准输出重定向文件已分开）。  done
-3. 除了并发执行还可以顺序执行, 最好可以达到执行完毕某一个进程以后, 执行另一个，某一个进程exit不影响另一个执行(如果exit了另一个不执行了那和写在一个程序没啥区别了) 
-4. Muti更丰富, 一个数组, 一段日期, 可以不光是数字
-5. startProcs检测  done
-6. proc不配置可以直接运行,每次配置config一堆东西好麻烦,反而不如不用框架, 好比前台的框架每次写个action要配置,太累 . done
+2. 进程可以不再作配置, 直接在Proc文件夹中定义 任务名称= 文件名称（任务名称.php）= 类名, 则默认以单实例,非常驻内存模式启动  非默认配置则仍需要在config.php中 进行配置.
+
 
 ##20140703更新功能点
 1. 启动进程可以使用 a  or  a+b  来进行单独 或者 并发执行
