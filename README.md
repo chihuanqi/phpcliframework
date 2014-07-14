@@ -19,7 +19,10 @@
 
 4. 配置进程
 
-          1) 编写 子进程类, 需要继承 ProcBasic基类, 进程类中的__counstruct()需要接受配置中initParam的配置信息,  run()函数为默认入口函数, 需要 public, 放入Proc 目录中进行执行。
+          1) 编写 子进程类, 需要继承 ProcBasic基类, 
+          进程类中的__counstruct()需要接受配置中initParam的配置信息, 没有initParam可以忽略,  
+          run()函数为默认入口函数, 需要 public, 
+          把该进程类放入Proc 目录中进行执行。
 
 
           2) 如果不按照默认的配置执行，那么需要在config中加入 配置 ,
