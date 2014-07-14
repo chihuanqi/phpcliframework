@@ -5,6 +5,7 @@
 
 	并发执行  php server.php start procname1+proname2
 	顺序执行  php server.php start procname1-proname2
+	
 2. 关闭 
 
  	php server.php stop  procname1+proname2
@@ -13,6 +14,7 @@
 3. 查看所有进程组状态 php server.php ps
 
 4. 配置进程
+
 
 	1) 编写 子进程类, 需要继承 ProcBasic基类, 进程类中的__counstruct()需要接受配置中initParam的配置信息,  run()函数为默认入口函数, 需要 public, 放入Proc 目录中进行执行。
 
