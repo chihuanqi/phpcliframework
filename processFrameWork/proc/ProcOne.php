@@ -13,10 +13,8 @@ class ProcOne extends ProcBasic
 
 	public function run()
 	{
-			var_dump($this->getCmt('mysqlrd')->query('select 1 from Plan'));
-			foreach($this->getCmt('fileOp')->open(LOG."/2014-07-03.error.log") as $line_num => $line)
-			{
-				echo $line_num."=>".trim($line); echo "\n";
+			for($i=0;$i<=63;$i++) {
+					echo $i."\n";
 			}
 	}
 

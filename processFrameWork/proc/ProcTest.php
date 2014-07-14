@@ -3,7 +3,10 @@ class ProcTest extends ProcBasic
 {
 	public function run()
 	{
-		echo "std out outout.....\n";
+			foreach($this->getCmt('fileOp')->open(VARDIR) as $filename)
+			{
+				echo $filename."\n";
+			}
 	}
 
 }

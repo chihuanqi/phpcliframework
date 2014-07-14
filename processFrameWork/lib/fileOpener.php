@@ -19,7 +19,7 @@ class fileOpener
 	public function open($filelocation)
 	{
 		if(is_dir($filelocation)) {
-			return new DirIterator($filelocation);	
+			return new DirectoryIterator($filelocation);	
 		}
 		if (is_file($filelocation)) {
 			return new FileIterator($filelocation);
@@ -45,7 +45,7 @@ class fileIterator implements Iterator
 
     public function __construct($filename) 
     {
-		@$fp = fopen($filename, 'r');
+		$fp = fopen($filename, 'r');
         if (!$fp) {
             throw new Exception("file ".$filename." is not exists");
         }
@@ -86,16 +86,20 @@ class fileIteratorArr extends fileIterator
 {
 	protected $delimiter = "\t";
 
-	public function __construct($filename, $delimiter="\t") 
+	public function __construct($filename, $delimiter="\t", $dotrim=true) 
 	{
 		parent::__construct($filename);
 		$this->delimiter = $delimiter;
+		$this->dotrim    = $dotrim;
 	}
 
 	public function current()
 	{
 		$line = parent::current();
-		$line_arr = explode("\t", $line);
+		$line_arr = explode($this->delimiter, $line);
+		if($this->dotrim) {
+			array_walk($line_arr, 'trim');
+		}
 		array_unshift($line_arr, $line);
 		return $line_arr;
 	}

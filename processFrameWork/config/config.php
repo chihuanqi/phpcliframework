@@ -2,8 +2,6 @@
 return array(
 	'daemon'  => false,
 	'maxloop' => 1000000,
-	'process_file' => VARDIR.'/proccess.txt',
-	'stdoutFile' => './std.out',
 	'process'=> array(
 		/*
 		 * 'proc name' => array(
@@ -17,13 +15,14 @@ return array(
 			'One' => array(
 					'className' => 'ProcOne', 
 					'initParam' => array(1), 
-					'daemon'    => true, 
+					'daemon'    => false, 
 					'multi'     => 1,
 			),
+
 			'Two' => array(
 					'className' => 'ProcTest', 
 					'initParam' => array(1), 
-					'daemon'    => true, 
+					'daemon'    => false, 
 					'multi'     => 1,
 			),
 
@@ -32,9 +31,9 @@ return array(
 		'mysqlrd' => array(
 			'componentName' => 'pdo',
 			'initParam'=> array(
-				'dsn'    => 'mysql:dbname=Vs_Health_Word;host=127.0.0.1;port=3307',
+				'dsn'    => 'mysql:dbname=test;host=127.0.0.1;port=3307',
 				'user'   => 'root',
-				'passwd' => 'Search@bd',
+				'passwd' => '123456',
 			)
 		),
 		'fileOp' => array(
@@ -42,4 +41,4 @@ return array(
 			'initParam' => array(),		
 		)
 	)
-);
+) ;
