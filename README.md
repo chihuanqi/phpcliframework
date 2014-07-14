@@ -11,7 +11,7 @@
 
           php server.php start procname
           php server.php stop  procname1+proname2
-	  php server.php stop  procname1-proname2
+          php server.php stop  procname1-proname2
 
 3. 查看所有进程组状态
 
