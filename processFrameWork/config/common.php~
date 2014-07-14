@@ -12,6 +12,8 @@ define('STDOUTDIR', VARDIR.DIRECTORY_SEPARATOR.'stdout');
 define('OUTPUT', VARDIR.DIRECTORY_SEPARATOR.'output');
 define('INPUT', VARDIR.DIRECTORY_SEPARATOR.'input');
 
+require(CONF.DIRECTORY_SEPARATOR."vsdata_common.php");
+
 ini_set("display_errors",1);
 error_reporting(E_ALL);
 date_default_timezone_set('Asia/shanghai');

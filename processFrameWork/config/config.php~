@@ -2,7 +2,7 @@
 return array(
 	'daemon'  => false,
 	'maxloop' => 1000000,
-	'maxStopTime' => 6,
+	'maxStopTime' => 10,
 	'process'=> array(
 		/*
 		 * 'proc name' => array(

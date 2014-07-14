@@ -1,0 +1,14 @@
+2014-07-14 18:33:42 MainProc[32589][info]:fork ProcOne 1 successfully, pid is 478
+2014-07-14 18:33:42 MainProc[32589][info]:fork ProcTest 1 successfully, pid is 482
+2014-07-14 18:33:43 One[478][info]:run function ended
+2014-07-14 18:33:43 Two[482][info]:run function ended
+2014-07-14 18:33:43 MainProc[32589][info]:One1 exited 
+2014-07-14 18:33:43 MainProc[32589][info]:Two1 exited 
+2014-07-14 18:33:43 MainProc[32589][info]:Master proc exited
+2014-07-14 18:33:45 MainProc[6720][info]:fork ProcOne 1 successfully, pid is 7097
+2014-07-14 18:33:45 MainProc[6720][info]:fork ProcTest 1 successfully, pid is 7101
+2014-07-14 18:33:46 One[7097][info]:run function ended
+2014-07-14 18:33:46 Two[7101][info]:run function ended
+2014-07-14 18:33:46 MainProc[6720][info]:One1 exited 
+2014-07-14 18:33:46 MainProc[6720][info]:Two1 exited 
+2014-07-14 18:33:46 MainProc[6720][info]:Master proc exited
