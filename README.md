@@ -3,19 +3,19 @@
 
 1. 启动 
 
-	  单独执行  php server.php start procname
+          单独执行  php server.php start procname
           并发执行  php server.php start procname1+proname2
-       	  顺序执行  php server.php start procname1-proname2
+          顺序执行  php server.php start procname1-proname2
 	
 2. 关闭 
 
-	  php server.php start procname
- 	  php server.php stop  procname1+proname2
+          php server.php start procname
+          php server.php stop  procname1+proname2
 	  php server.php stop  procname1-proname2
 
 3. 查看所有进程组状态
 
-	  php server.php ps
+          php server.php ps
 
 4. 配置进程
 
