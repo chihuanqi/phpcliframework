@@ -25,7 +25,6 @@ class MainProc extends ProcBasic
     private $childForked = false;
     private $pidFile    = 0;
     private $childrenProc = array();
-    private $daemon = false;
     private $processFile = NULL;
     private $maxStopTime = 3;
     private $stdoutFile = '/dev/null';
@@ -334,6 +333,7 @@ class MainProc extends ProcBasic
             $worker->setMaxLoop($maxLoop);
             $worker->setComponent($this->components);
             $worker->setStartProcs($this->startProcs);
+            $worker->setDaemon($daemon);
             set_error_handler(array(&$worker, "errorlog"));
             if ($daemon) {
                 $worker->loopRun();

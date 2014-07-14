@@ -83,7 +83,7 @@ class ProcBasic
 				case SIGTERM :
 				case SIGINT :
 				case SIGHUP :
-						$this->daemon==false && exit(0);
+						$this->deamon==false && exit(0);
 						$this->isRunning = false;
 				}
 		}

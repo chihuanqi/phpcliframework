@@ -15,7 +15,7 @@ class ProcOne extends ProcBasic
 	{
 			for($i=0;$i<=63;$i++) {
 					echo $i."\n";
-					echo "sdafsafddsaf";
+					sleep(3);
 			}
 	}
 

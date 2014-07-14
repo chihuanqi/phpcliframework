@@ -15,8 +15,7 @@ class ProcOne extends ProcBasic
 	{
 			for($i=0;$i<=63;$i++) {
 					echo $i."\n";
-					echo sdafsafddsaf;
-				//var_dump($this->getCmt('mysqlrd')->query('delete from Word'.$i.' where id<100000000'));
+					echo "sdafsafddsaf";
 			}
 	}
 

@@ -25,7 +25,6 @@ class MainProc extends ProcBasic
     private $childForked = false;
     private $pidFile    = 0;
     private $childrenProc = array();
-    private $daemon = false;
     private $processFile = NULL;
     private $maxStopTime = 3;
     private $stdoutFile = '/dev/null';

@@ -26,41 +26,6 @@ return array(
 					'daemon'    => false, 
 					'multi'     => 1,
 			),
-
-			'fcdiffzx' => array(
-					'className' => 'fcdiffzx',
-					'initParam' => array(),
-					'daemon' => false,
-					'multi'  => 1,				
-			),
-
-			'fcdiffinList' => array(
-					'className' => 'fcdiffinList',
-					'initParam' => array(),
-					'daemon' => false,
-					'multi'  => 1,			
-			),	
-
-			'zxdiffinList' => array(
-					'className' => 'zxdiffinList',
-					'initParam' => array(),
-					'daemon' => false,
-					'multi'  => 1,			
-			),
-			'checkPaloDaily' => array(
-					'className' => 'checkPaloDaily',
-					'initParam' => array(),
-					'daemon'    => false,
-					'multi'     => 1,		
-			),
-			'httpListener' => array(
-					'className' => 'httpListener',
-					'initParam' => array('0.0.0.0', '8809'),
-					'daemon'    => true,
-					'multi'     => 1,
-					'maxLoop'   => 0,
-			),
-
 	),
 	'component' => array(
 		'mysqlrd' => array(
