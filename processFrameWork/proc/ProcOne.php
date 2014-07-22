@@ -13,10 +13,10 @@ class ProcOne extends ProcBasic
 
 	public function run()
 	{
-			for($i=0;$i<=63;$i++) {
-					echo $i."\n";
-					sleep(3);
-			}
+		for($i=0;$i<=63;$i++) {
+				echo $i."\n";
+				sleep(3);
+		}
 	}
 
 }
