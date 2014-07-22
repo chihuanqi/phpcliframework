@@ -24,39 +24,39 @@ class fileOpener
 
 class fileIterator implements Iterator
 {
-    protected  $fp;
-    protected  $line_num;
-    protected  $line;
-
-    public function __construct($filename) 
-    {
+	protected  $fp;
+	protected  $line_num;
+	protected  $line;
+	
+	public function __construct($filename) 
+	{
 		$fp = fopen($filename, 'r');
-        if (!$fp) {
-            throw new Exception("file ".$filename." is not exists");
-        }
+		if (!$fp) {
+		    throw new Exception("file ".$filename." is not exists");
+		}
 		$this->fp = $fp;
-    }
-
-    public function key()
+	}
+	
+	public function key()
 	{
-        return $this->line_num;
-    }
-
-    public function current()
+		return $this->line_num;
+	}
+	
+	public function current()
 	{
-        return $this->line;
-    }
+		return $this->line;
+	}
 
-    public function rewind()
+	public function rewind()
 	{
-        rewind($this->fp);
-    }
+		rewind($this->fp);
+	}
 
-    public function next()
+	public function next()
 	{
-    }
+	}
 
-    public function valid()
+	public function valid()
 	{
 		$this->line = fgets($this->fp);
 		if ($this->line !==false) {
@@ -64,7 +64,7 @@ class fileIterator implements Iterator
 			return true;
 		}
 		return false;
-    }
+	}
 }
 
 class fileIteratorArr extends fileIterator
